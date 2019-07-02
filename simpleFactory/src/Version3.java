@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author Jerry
  * @Date 2019-07-02 23:33
  */
-public class VersionThree {
+public class Version3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("亲输入数字A:");
