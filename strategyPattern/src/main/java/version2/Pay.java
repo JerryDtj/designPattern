@@ -15,6 +15,16 @@ package version2;
  */
 public abstract class Pay{
     /**
+     * 打几折
+     */
+    double rebate = 0;
+    /**
+     * 满300 返 100
+     */
+    double cash = 0;
+    double returnCash = 0;
+
+    /**
      * 打折计算抽象类
      * @param pice
      * @return
@@ -37,7 +47,6 @@ class NormalCash extends Pay{
  * 打折计算
  */
 class RebateCash extends Pay{
-    private double rebate = 0L;
 
     private RebateCash(){
 
@@ -47,13 +56,41 @@ class RebateCash extends Pay{
         this.rebate = rebate;
     }
 
-    public RebateCash setRebateCash(double rebate){
-        return new RebateCash(rebate);
+    /**
+     * 设置打折力度
+     * @param rebate 打几折
+     * @return
+     */
+    public static RebateCash setRebateCash(double rebate){
+
+        return new RebateCash(rebate*0.1);
     }
 
     @Override
     public double payMoney(double pice) {
-        return 0;
+        return pice*rebate;
+    }
+}
+
+/**
+ * 满300返100
+ */
+class ReturnCash extends Pay{
+
+    private ReturnCash(){}
+
+    private ReturnCash(double cash,double returnCash){
+        this.cash = cash;
+        this.returnCash = returnCash;
+    }
+
+    public static ReturnCash setCashAndReturn(double cash,double returnCash){
+       return new ReturnCash(cash,returnCash);
+    }
+
+    @Override
+    public double payMoney(double pice) {
+        return pice - pice/cash*returnCash;
     }
 }
 

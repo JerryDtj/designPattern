@@ -30,5 +30,5 @@ public class Goods {
    /**
     * 商品折扣:默认不打折
     */
-   public double range = 10;
+   public Pay pay;
 }
