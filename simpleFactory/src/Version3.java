@@ -24,66 +24,48 @@ public class Version3 {
         String operate = scan.nextLine();
 
         Operation operation = OperationFactory.crteateOperation(operate);
-        operation.setNum1(num1);
-        operation.setNum2(num2);
-        int result = operation.operate();
+        int result = operation.operate(num1,num2);
         System.out.println("计算结果："+result);
     }
 
-    public static abstract class Operation{
-        private int num1;
-        private int num2;
-
+    public interface Operation{
         /**
          * 开始计算方法
          * @return 运算结果
          */
-        public abstract int operate();
+        int operate(int num1,int num2);
+    }
 
+    public static class AddOperation implements Operation{
 
-        public void setNum1(int num1) {
-            this.num1 = num1;
-        }
-
-        public int getNum2() {
-            return num2;
-        }
-
-        public void setNum2(int num2) {
-            this.num2 = num2;
+        @Override
+        public int operate(int num1,int num2) {
+            return num1+num2;
         }
     }
 
-    public static class AddOperation extends Operation{
-
+    public static class SubOperation implements Operation{
         @Override
-        public int operate() {
-            return super.num1+super.num2;
+        public int operate(int num1,int num2) {
+            return num1-num2;
         }
     }
 
-    public static class SubOperation extends Operation{
+    public static class MulOperation implements Operation{
         @Override
-        public int operate() {
-            return super.num1-super.num2;
+        public int operate(int num1,int num2) {
+            return num1*num2;
         }
     }
 
-    public static class MulOperation extends Operation{
-        @Override
-        public int operate() {
-            return super.num1*super.num2;
-        }
-    }
-
-    public static class DivOperation extends Operation{
+    public static class DivOperation implements Operation{
 
         @Override
-        public int operate() {
-            if (super.num2==0){
+        public int operate(int num1,int num2) {
+            if (num2==0){
                 throw new RuntimeException("除数不能为0");
             }
-            return super.num1/super.num2;
+            return num1/num2;
         }
     }
 
