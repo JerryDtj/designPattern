@@ -11,6 +11,7 @@
 
     <modules>
         <module>strategyPattern</module>
+        <module>proxyPattern</module>
     </modules>
 
     <dependencyManagement>
