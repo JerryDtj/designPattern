@@ -1,17 +1,17 @@
 package version1;
 
 /**
- * despaction
+ * 简单的策略模式，计算接口
  *
  * @Author: jerry
  * @DATE: 2019/7/8 19:21
  **/
 public interface Operation {
     /**
-     * 计算抽象类
-     * @param num1
-     * @param num2
-     * @return
+     * 计算方法
+     * @param num1 计算的数字1
+     * @param num2 计算的数字2
+     * @return 计算后的结果
      */
-    double operation(int num1,int num2);
+    double operation(double num1,double num2);
 }
