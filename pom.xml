@@ -12,6 +12,8 @@
     <modules>
         <module>strategyPattern</module>
         <module>decorator</module>
+        <module>proxyPattern</module>
+        <module>FactoryMethodPattern</module>
     </modules>
 
     <dependencyManagement>
