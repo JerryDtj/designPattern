@@ -6,7 +6,6 @@ package version2;
  */
 
 public class ConcreteDecoratorA extends Decorator{
-    private String addState;
 
     @Override
     public void operation(){

@@ -10,6 +10,7 @@ import lombok.Setter;
 public class Decorator implements Component  {
     Component component;
 
+    @Override
     public void operation() {
         System.out.println("this is Decorator");
         component.operation();
