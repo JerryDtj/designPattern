@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.learn.design</groupId>
+    <groupId>com.learn.designPattern</groupId>
     <artifactId>decoratorPattern</artifactId>
 
     <dependencies>
