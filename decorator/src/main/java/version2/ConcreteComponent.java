@@ -1,0 +1,11 @@
+package version2;
+
+/**
+ * @author Jerry
+ * @Date 2019-07-10 07:30
+ */
+public class ConcreteComponent implements Component {
+    public void operation() {
+        System.out.println(" this is ConcreteComponent's operation() ");
+    }
+}
