@@ -1,6 +1,8 @@
 package version2;
 
 /**
+ * 装饰器模式客户端调用
+ *
  * @author Jerry
  * @Date 2019-07-10 09:05
  */

@@ -1,6 +1,9 @@
 package version2;
 
 /**
+ *
+ * 装饰器A
+ *
  * @author Jerry
  * @Date 2019-07-10 08:47
  */

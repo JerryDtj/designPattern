@@ -3,6 +3,9 @@ package version2;
 import lombok.Setter;
 
 /**
+ *
+ * 装饰器
+ *
  * @author Jerry
  * @Date 2019-07-10 07:37
  */
