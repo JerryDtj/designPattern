@@ -7,8 +7,9 @@ package version2;
 public class Client {
     public static void main(String[] args) {
         ConcreteComponent concreteComponent = new ConcreteComponent();
-        ConcreteDecoratorA concreteDecoratorA = new ConcreteDecoratorA();
-        concreteComponent.operation();
+        Decorator decorator = new ConcreteDecoratorA();
+        decorator.setComponent(concreteComponent);
+        decorator.operation();
     }
 
 
