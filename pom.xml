@@ -11,7 +11,7 @@
 
     <modules>
         <module>strategyPattern</module>
-        <module>decorator</module>
+        <module>decoratorPattern</module>
         <module>proxyPattern</module>
         <module>FactoryMethodPattern</module>
     </modules>
