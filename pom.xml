@@ -16,6 +16,7 @@
         <module>FactoryMethodPattern</module>
         <module>PrototypePattern</module>
         <module>TemplatePattern</module>
+        <module>FacadePattern</module>
     </modules>
 
     <dependencyManagement>
