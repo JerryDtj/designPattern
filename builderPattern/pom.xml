@@ -12,5 +12,12 @@
     <groupId>com.learn</groupId>
     <artifactId>builderPattern</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
