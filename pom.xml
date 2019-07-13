@@ -18,6 +18,7 @@
         <module>builderPattern</module>
         <module>TemplatePattern</module>
         <module>FacadePattern</module>
+        <module>ObserverPattern</module>
     </modules>
 
     <dependencyManagement>
