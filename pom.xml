@@ -19,6 +19,7 @@
         <module>TemplatePattern</module>
         <module>FacadePattern</module>
         <module>ObserverPattern</module>
+        <module>review</module>
     </modules>
 
     <dependencyManagement>
