@@ -21,23 +21,59 @@
 
 ### 具体实现
 
-- 代理模式实现:[设计模式之代理模式](https://github.com/JerryDtj/designPattern/tree/master/proxyPattern)
-- 静态代理:
-- 动态代理:
+- #### 代理模式实现:[设计模式之代理模式](https://github.com/JerryDtj/designPattern/tree/master/proxyPattern)
+
+- #### 静态代理: 就是代理模式.
+
+- #### 动态代理:
+
+  ##### 	来由:
+
+  ​		当增加一个和之前委托类毫无关心的新委托类时,都要新增委托类和委托类的代理类,即使2个代理类完全相同.
+
+  ##### 	是什么:
+
+  ​		动态代理本质上仍然是代理，情况与上面介绍的完全一样，只是代理与被代理人的关系是动态确定的.
+
+  ##### 	实现:
+
+  ​		分为2种jdk 和 cglib,Jdk的动态代理实现方法是依赖于**接口**的,cglib是使用java字节码操作框架ASM实现动态创建一个委托类的子类.在子类上动态扩展代码.
+
   - java:
-    - 代码
-    - 原理
+
+    - 代码 [动态代理](https://github.com/JerryDtj/designPattern/tree/master/review/src/main/java/proxy/dynamicproxy/java)
+
+    - 原理 :
+
+      - 在proxy类中会调用proxyClassCache.get(loader, interfaces); 尝试获取本地引用缓存,当缓存中没有的时候,通过Factory自动生成代理类加载进入jvm中.
+
+      - **缓存cacheMap的classloader的弱引用作为key，value是map**
+
+        **而map是以class[]的用引用做key，value是值为动态生成的代理类class<?> 的弱引用CacheValue。**
+
+    - 引用链:
+
+      1. proxy.newProxyInstance()
+      2. proxy.getProxyClass0(ClassLoader loader,   Class<?>... interfaces)
+      3. proxyClassCache.get(loader, interfaces);// 本地弱引用缓存
+      4. subKeyFactory.apply(key, parameter) 
+      5. Factory valueFactory.apply(key, parameter) //**此处生成了字节码类$Proxy0,1,2,3，动态加载**
+      6. ProxyGenerator.generateProxyClass(proxyName, interfaces, accessFlags)
+      7. -Dsun.misc.ProxyGenerator.saveGeneratedFiles=true 时才会把代理类写入本地
+      8. generateClassFile() //动态生成了接口的实现类 
+
   - cglib
+
     - 代码
     - 原理
 
-参考文章:[*设计模式---代理模式*](https://www.cnblogs.com/daniels/p/8242592.html)、*[秒懂Java代理与动态代理模式](https://blog.csdn.net/ShuSheng0007/article/details/80864854)*、[*Java动态代理机制详解(JDK 和CGLIB，Javassist，ASM)*](https://www.cnblogs.com/rinack/p/7742682.html)
+参考文章:[*设计模式---代理模式*](https://www.cnblogs.com/daniels/p/8242592.html)、*[秒懂Java代理与动态代理模式](https://blog.csdn.net/ShuSheng0007/article/details/80864854)*、[JDK8动态代理示例与原码解析](https://blog.csdn.net/fenglllle/article/details/82587919)
 
 ## 和装饰器模式的区别
 
 - 代理模式，注重对对象某一功能的流程把控和辅助。它可以控制对象做某些事，**重心是为了借用对象的功能完成某一流程，而非对象功能如何。**
 - 装饰模式，注重对对象功能的扩展，**它不关心外界如何调用，只注重对对象功能的加强，装饰后还是对象本身。**
 - **对于代理类，如何调用对象的某一功能是思考重点，而不需要兼顾对象的所有功能；**
--  **对于装饰类，如何扩展对象的某一功能是思考重点，同时也需要兼顾对象的其它功能，因为再怎么装饰，本质也是对象本身，要担负起对象应有的职责。**
+- **对于装饰类，如何扩展对象的某一功能是思考重点，同时也需要兼顾对象的其它功能，因为再怎么装饰，本质也是对象本身，要担负起对象应有的职责。**
 
 参考文章:*[代理模式和装饰器模式的区别](https://www.jianshu.com/p/c06a686dae39)*

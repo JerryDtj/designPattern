@@ -10,6 +10,7 @@ public class Writer implements Thesis{
     /**
      * 写手开始写论文
      */
+    @Override
     public void writing() {
         System.out.println("写手开始写论文");
     }
