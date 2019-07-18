@@ -21,6 +21,7 @@
         <module>ObserverPattern</module>
         <module>review</module>
         <module>AbstractFactory</module>
+        <module>StatePattern</module>
     </modules>
 
     <build>
