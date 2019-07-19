@@ -22,6 +22,7 @@
         <module>review</module>
         <module>AbstractFactory</module>
         <module>StatePattern</module>
+        <module>AdapterPattern</module>
     </modules>
 
     <build>
