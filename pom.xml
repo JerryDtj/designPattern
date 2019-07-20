@@ -23,6 +23,7 @@
         <module>AbstractFactory</module>
         <module>StatePattern</module>
         <module>AdapterPattern</module>
+        <module>MementoPattern</module>
     </modules>
 
     <build>
