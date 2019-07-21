@@ -24,6 +24,7 @@
         <module>StatePattern</module>
         <module>AdapterPattern</module>
         <module>MementoPattern</module>
+        <module>compositePattern</module>
     </modules>
 
     <build>
