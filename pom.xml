@@ -25,6 +25,7 @@
         <module>AdapterPattern</module>
         <module>MementoPattern</module>
         <module>compositePattern</module>
+        <module>singletonPattern</module>
     </modules>
 
     <build>
