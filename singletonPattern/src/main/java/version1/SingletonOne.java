@@ -1,7 +1,7 @@
 package version1;
 
 /**
- * 饥汉模式
+ * 懒汉（饱汉）模式
  *  采用双重锁定来保证线程安全
  *
  * @Author: jerry
@@ -16,7 +16,7 @@ public class SingletonOne {
         //第一层检查
         if (singletonOne == null){
             synchronized (SingletonOne.class){
-                //第二层检查 为了防止多线程情况下有N个线程进入到了这个
+                //第二层检查 为了防止多线程情况下有N个线程进入到这个入口
                 if (singletonOne==null){
                     return new SingletonOne();
                 }
