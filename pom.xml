@@ -27,7 +27,6 @@
         <module>compositePattern</module>
         <module>singletonPattern</module>
         <module>IteratorPattern</module>
-        <module>BridgeClient</module>
         <module>BridgePattern</module>
     </modules>
 
