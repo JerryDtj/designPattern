@@ -28,6 +28,7 @@
         <module>singletonPattern</module>
         <module>IteratorPattern</module>
         <module>BridgePattern</module>
+        <module>CommandPattern</module>
     </modules>
 
     <build>
