@@ -29,6 +29,7 @@
         <module>IteratorPattern</module>
         <module>BridgePattern</module>
         <module>CommandPattern</module>
+        <module>ChainPattern</module>
     </modules>
 
     <build>
