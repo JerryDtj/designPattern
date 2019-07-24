@@ -30,6 +30,7 @@
         <module>BridgePattern</module>
         <module>CommandPattern</module>
         <module>ChainPattern</module>
+        <module>MediatorPattern</module>
     </modules>
 
     <build>
