@@ -32,6 +32,7 @@
         <module>ChainPattern</module>
         <module>MediatorPattern</module>
         <module>FlyWeightPattern</module>
+        <module>InterpreterPattern</module>
     </modules>
 
     <build>
