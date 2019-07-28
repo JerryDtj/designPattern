@@ -33,6 +33,7 @@
         <module>MediatorPattern</module>
         <module>FlyWeightPattern</module>
         <module>InterpreterPattern</module>
+        <module>VisitorPattern</module>
     </modules>
 
     <build>
