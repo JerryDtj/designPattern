@@ -5,9 +5,23 @@
 public class InterpreterClient {
     public static void main(String[] args) {
         Context context = new Context();
-        context.setMsg("abc%sabc%scc%sdd");
-        StringExpression stringExpression = new ReplaceString();
-        stringExpression.setContext(context);
-        System.out.println(stringExpression.stringExpression());
+        context.setMsg("abc%sabc%scc%add");
+        String result = "";
+        StringExpression stringExpression;
+        if (context.getMsg().contains("%s")){
+            stringExpression = new ReplaceString();
+            stringExpression.setContext(context);
+            context.setMsg(stringExpression.stringExpression());
+        }
+        if (context.getMsg().contains("%a")){
+            stringExpression = new AddString();
+            stringExpression.setContext(context);
+            context.setMsg(stringExpression.stringExpression());
+        }
+
+
+        System.out.println(context.getMsg());
+
+
     }
 }
